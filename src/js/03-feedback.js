@@ -2,7 +2,7 @@ import throttle from 'lodash.throttle';
 
 const form = document.querySelector('.js-form');
 const FEEDBACK_FORM_STATE = 'feedback-form-state';
-const userStates = {};
+let userStates = {};
 
 form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onFormInput, 500));
@@ -42,6 +42,8 @@ function onFormSubmit(e) {
   console.log(outputUserData);
   form.reset();
   localStorage.removeItem(FEEDBACK_FORM_STATE);
+  userStates = {};
+  console.log(userStates);
 }
 
 // проверка localStorage
