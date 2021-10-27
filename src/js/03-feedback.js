@@ -43,7 +43,6 @@ function onFormSubmit(e) {
   form.reset();
   localStorage.removeItem(FEEDBACK_FORM_STATE);
   userStates = {};
-  console.log(userStates);
 }
 
 // проверка localStorage
